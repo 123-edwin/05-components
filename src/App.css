@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+body {
+    background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+    background-size: cover;
+    animation: slidein 100s infinite alternate;
+    -webkit-animation: slidein 100s infinite alternate; /* Para navegadores WebKit */
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards; /* Para navegadores WebKit */
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite; /* Para navegadores WebKit */
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate; /* Para navegadores WebKit */
+}
+
+@keyframes slidein {
+    from { background-position: top; background-size: 3000px; }
+    to { background-position: -100px 0px; background-size: 2750px; }
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(75, 75, 250, 0.3);
+    border-radius: 3px;
+}
+
+.center h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+}
+
+.contenedorPrincipal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.izquierda {
+    margin-left: 10px;
+    width: 40%;
+}
+
+.derecha {
+    width: 60%;
+}
+

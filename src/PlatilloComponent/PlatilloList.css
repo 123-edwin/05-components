@@ -1,0 +1,6 @@
+.platillos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Cambiar space-around por space-between */
+  }
+  

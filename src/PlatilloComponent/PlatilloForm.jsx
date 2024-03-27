@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './PlatilloForm.css'
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 const PlatilloForm = ({ onSave, onCancel, platillo }) => {
   const initialState = {
@@ -70,25 +71,25 @@ const PlatilloForm = ({ onSave, onCancel, platillo }) => {
   };
 
   return (
-    <div>
+    <div className='contenido' style={{color:'white'}}>
       <h2>{platillo ? 'Editar Platillo' : 'Agregar Platillo'}</h2>
       <form ref={formRef}>
         <label>
           Título del Platillo:
-          <input required type="text" value={formData.comida} onChange={(e) => setFormData(prevState => ({ ...prevState, comida: e.target.value }))} />
+          <input required type="text" class="form-control" value={formData.comida} onChange={(e) => setFormData(prevState => ({ ...prevState, comida: e.target.value }))} />
         </label>
         <br />
         <label>
           Descripción del Platillo:
-          <textarea required value={formData.descripcion} onChange={(e) => setFormData(prevState => ({ ...prevState, descripcion: e.target.value }))} />
+          <textarea class="form-control" required value={formData.descripcion} onChange={(e) => setFormData(prevState => ({ ...prevState, descripcion: e.target.value }))} />
         </label>
         <br />
         <label>
           Acompañantes:
           <br />
           {['Salsa verde', 'Salsa roja', 'Aguacate', 'Cebollitas'].map((opcion, index) => (
-            <div key={index}>
-              <input required
+            <div key={index} class="form-check">
+              <input required class="form-check-input"
                 type="checkbox"
                 value={opcion}
                 checked={formData.acompaniantes.includes(opcion)}
@@ -103,8 +104,8 @@ const PlatilloForm = ({ onSave, onCancel, platillo }) => {
           Picor:
           <br />
           {['Sin picante', 'No pica', 'Sí pica'].map((opcion, index) => (
-            <div key={index}>
-              <input required
+            <div key={index} class="form-check">
+              <input required class="form-check-input"
                 type="radio"
                 value={opcion}
                 checked={formData.picor === opcion}
@@ -117,7 +118,7 @@ const PlatilloForm = ({ onSave, onCancel, platillo }) => {
         <br />
         <label>
           Número de Personas:
-          <select value={formData.numPersonas} onChange={(e) => setFormData(prevState => ({ ...prevState, numPersonas: e.target.value }))}>
+          <select class="form-select" value={formData.numPersonas} onChange={(e) => setFormData(prevState => ({ ...prevState, numPersonas: e.target.value }))}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -127,11 +128,13 @@ const PlatilloForm = ({ onSave, onCancel, platillo }) => {
         <br />
         <label>
           URL de la Imagen:
-          <input type="text" value={formData.image} onChange={(e) => setFormData(prevState => ({ ...prevState, image: e.target.value }))} />
+          <input class="form-control" type="text" value={formData.image} onChange={(e) => setFormData(prevState => ({ ...prevState, image: e.target.value }))} />
         </label>
         <br />
-        <button type="button" onClick={handleGuardar}>Guardar</button>
-        <button type="button" onClick={handleCancelar}>Cancelar</button>
+        <div className='botones' style={{marginTop: '1rem'}}>
+        <button type="button" class="btn btn-success me-2" onClick={handleGuardar}>Guardar</button>
+        <button type="button" class="btn btn-warning" onClick={handleCancelar}>Cancelar</button>
+        </div>
       </form>
     </div>
   );
