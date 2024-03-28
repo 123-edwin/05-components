@@ -54,7 +54,7 @@ function App() {
       </div>
       <div className="derecha">
         <div>
-      <input style={{width:'300px', backgroundColor:'rgba(0, 0, 0, 0)', border:'2px solid black', fontFamily:'cursive'}} class="form-control" type="text" value={busqueda} onChange={handleSearchChange} placeholder="Buscar" />
+      <input style={{marginTop:'1rem' ,width:'300px', backgroundColor:'rgba(0, 0, 0, 0)', border:'2px solid black', fontFamily:'cursive'}} class="form-control" type="text" value={busqueda} onChange={handleSearchChange} placeholder="Buscar" />
         <select class="form-select" value={orden} onChange={handleOrdenChange} style={{marginBottom: '15px', width:'200px', backgroundColor:'rgba(0, 0, 0, 0)', border:'2px solid black'}}>
           <option value="nombre">Ordenar por nombre</option>
           <option value="picor">Ordenar por picor</option>
