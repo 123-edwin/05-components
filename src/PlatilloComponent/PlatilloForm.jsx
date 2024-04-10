@@ -45,7 +45,7 @@ const PlatilloForm = ({ onSave, onCancel, platillo }) => {
   };
 
   const handleGuardar = () => {
-    if (!formData.comida || !formData.descripcion || formData.acompaniantes.length === 0 || !formData.picor) {
+    if (!formData.comida || !formData.descripcion || formData.acompaniantes.length === 0 || !formData.picor || !formData.image) {
       alert("Por favor, complete todos los campos obligatorios.");
       return;
     }
@@ -141,9 +141,12 @@ const PlatilloForm = ({ onSave, onCancel, platillo }) => {
 };
 
 // Función para generar un ID único
+let nextId = 0;
+
 const generateUniqueId = () => {
-    return Math.random().toString(36).substr(2, 9); // Genera un identificador único de 9 caracteres
-  };
+    return nextId++;
+};
+
   
   export default PlatilloForm;
   
