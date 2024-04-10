@@ -5,6 +5,7 @@ import './PlatilloList.css'
 
 const PlatillosList = ({ platillos, onEditPlatillo, onDeletePlatillo, orden, busqueda }) => {
   
+  
   const valorPicor = (picor) => {
     if (picor === 'No pica') {
       return 1;
@@ -20,10 +21,11 @@ const PlatillosList = ({ platillos, onEditPlatillo, onDeletePlatillo, orden, bus
       return a.comida.localeCompare(b.comida);
     } else if (orden === 'picor') {
       return valorPicor(a.picor) - valorPicor(b.picor);
-    } else {
-      return a.id - b.id;
+    } else if (orden === 'entrada') {
+      return a.id - b.id; // Ordenar por orden de entrada
     }
   };
+  
 
   const filtrarPlatillos = (platillo) => {
     for (const key in platillo) {
